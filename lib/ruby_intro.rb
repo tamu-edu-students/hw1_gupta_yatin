@@ -27,15 +27,26 @@ end
 # Part 2
 
 def hello(name)
+  "Hello, " + name
   # YOUR CODE HERE
 end
 
 def starts_with_consonant?(string)
-  # YOUR CODE HERE
+  if string.nil? || string.length < 1 || !string[0].match?(/[A-Za-z]/)
+      return false
+  end
+  string = string.upcase
+  !string[0].start_with?("A", "E", "I", "O", "U")
 end
 
 def binary_multiple_of_4?(string)
   # YOUR CODE HERE
+  if string.nil? || string.length < 1 || !(string.count('01') == string.size)
+    return false
+  end
+
+  c = string.to_i(2)
+  c % 4 == 0
 end
 
 # Part 3
