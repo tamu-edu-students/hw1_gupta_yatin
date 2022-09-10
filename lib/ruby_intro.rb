@@ -58,7 +58,7 @@ class BookInStock
   attr_accessor :price
 
   def initialize(isbn_arg, price_arg)
-    raise ArgumentError if price_arg < 1 || isbn_arg.length < 1
+    raise ArgumentError.new("ISBN cannot be empty. Price should be grater than 0") if price_arg < 1 || isbn_arg.length < 1
     # instance variable initialization
     @isbn = isbn_arg
     @price = price_arg
