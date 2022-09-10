@@ -53,5 +53,19 @@ end
 
 # Object representing a book
 class BookInStock
+
+  attr_accessor :isbn
+  attr_accessor :price
+
+  def initialize(isbn_arg, price_arg)
+    raise ArgumentError if price_arg < 1 || isbn_arg.length < 1
+    # instance variable initialization
+    @isbn = isbn_arg
+    @price = price_arg
+  end
+
+  def price_as_string
+    "$%0.2f" % @price
+  end
   # YOUR CODE HERE
 end
